@@ -1,22 +1,33 @@
-# Waste to Energy Simulator 🌱⚡
+# Smart Waste to Energy Simulator 🌱⚡
 
-# Taking input from user
-waste_kg = float(input("Enter amount of organic waste (in kg): "))
+print("Welcome to Smart Waste System\n")
 
-# Biogas calculation (approx)
-biogas = waste_kg * 0.1   # 1kg ≈ 0.08–0.12 m³ → taking avg 0.1
+# Taking multiple inputs
+food_waste = float(input("Enter food waste (kg): "))
+plant_waste = float(input("Enter plant waste (kg): "))
+
+# Total waste
+total_waste = food_waste + plant_waste
+
+# Biogas calculation
+biogas = total_waste * 0.1
 
 # Energy calculation
-energy = biogas * 2       # 1 m³ biogas ≈ 2 kWh
+energy = biogas * 2
 
-# Output results
-print("\n--- Energy Report ---")
-print(f"Waste processed: {waste_kg} kg")
-print(f"Biogas produced: {biogas:.2f} m³")
-print(f"Energy generated: {energy:.2f} kWh")
+# Output
+print("\n--- Smart Report ---")
+print(f"Total Waste: {total_waste} kg")
+print(f"Biogas: {biogas:.2f} m³")
+print(f"Energy: {energy:.2f} kWh")
 
-# Extra insight
-if energy > 8:
-    print("This can power Wi-Fi + street lights! 🌐💡")
+# Smart suggestion
+if total_waste > 30:
+    print("High waste detected! Add more bins in this area 🚮")
 else:
-    print("Energy generated is small, but still useful 🌱")
+    print("Waste level normal ✅")
+
+# Usage estimate
+print("\n--- Usage ---")
+print(f"Wi-Fi: {energy*4:.0f} hours")
+print(f"Street Lights: {energy/2:.0f} lights (5 hrs)")
