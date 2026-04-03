@@ -31,3 +31,17 @@ else:
 print("\n--- Usage ---")
 print(f"Wi-Fi: {energy*4:.0f} hours")
 print(f"Street Lights: {energy/2:.0f} lights (5 hrs)")
+import matplotlib.pyplot as plt
+
+# Data for graph
+labels = ['Waste (kg)', 'Biogas (m³)', 'Energy (kWh)']
+values = [total_waste, biogas, energy]
+
+# Create bar graph
+plt.bar(labels, values)
+
+plt.title("Waste to Energy Conversion")
+plt.xlabel("Parameters")
+plt.ylabel("Values")
+
+plt.show()
